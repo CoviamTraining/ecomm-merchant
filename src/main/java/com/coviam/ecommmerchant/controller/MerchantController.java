@@ -7,10 +7,13 @@ import com.coviam.ecommmerchant.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by gaurav on 05/06/17.
  */
+
+@RestController
 public class MerchantController {
 
     @Autowired
@@ -22,19 +25,17 @@ public class MerchantController {
     }
 
     @RequestMapping(value = "/getmerchant/{id}")
-    public Merchant getMerchant(@PathVariable Long id){
+    public Merchant getMerchant(@PathVariable Integer id){
         return merchantService.getMerchant(id);
     }
 
     @RequestMapping(value = "/getmerchantnamelogorating/{id}")
     public MerchantInfoNameLogoRating getMerchantNameLogoRating(@PathVariable Long id){
-        return merchantService.getMerchantNameLogoRating(id);
+        return merchantService.getMerchantNameLogoRating(Math.toIntExact(id));
     }
-
-    
 
     @RequestMapping(value = "/getsoldanddistinctproduct/{id}")
     public MerchantInforSoldDistinct getSoldAndDistinctProduct(@PathVariable Long id){
-        return merchantService.getProductSoldDistinctProduct(id);
+        return merchantService.getProductSoldDistinctProduct(Math.toIntExact(id));
     }
 }

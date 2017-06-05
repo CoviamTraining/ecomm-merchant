@@ -10,11 +10,11 @@ import com.coviam.ecommmerchant.entity.MerchantInforSoldDistinct;
  */
 public interface MerchantService {
 
-    public Merchant getMerchant(Long id);
+    public Merchant getMerchant(Integer id);
 
-    public MerchantInfoNameLogoRating getMerchantNameLogoRating(Long id);
+    public MerchantInfoNameLogoRating getMerchantNameLogoRating(int id);
 
-    public MerchantInforSoldDistinct getProductSoldDistinctProduct(Long id);
+    public MerchantInforSoldDistinct getProductSoldDistinctProduct(int id);
 
 
 }

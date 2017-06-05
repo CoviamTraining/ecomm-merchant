@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by gaurav on 05/06/17.
  */
+
 @Service
 public class MerchantServiceImpl implements MerchantService {
 
@@ -17,17 +18,17 @@ public class MerchantServiceImpl implements MerchantService {
     MerchantRepository merchantRepository;
 
     @Override
-    public Merchant getMerchant(Long id) {
+    public Merchant getMerchant(Integer id) {
         return merchantRepository.findOne(id);
     }
 
     @Override
-    public MerchantInfoNameLogoRating getMerchantNameLogoRating(Long id) {
+    public MerchantInfoNameLogoRating getMerchantNameLogoRating(int id) {
         return merchantRepository.getMerchantNameLogoRating(id);
     }
 
     @Override
-    public MerchantInforSoldDistinct getProductSoldDistinctProduct(Long id) {
+    public MerchantInforSoldDistinct getProductSoldDistinctProduct(int id) {
         return merchantRepository.getProductSoldDistinctProduct(id);
     }
 }

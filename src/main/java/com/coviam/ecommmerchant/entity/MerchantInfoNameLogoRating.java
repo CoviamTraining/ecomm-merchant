@@ -37,4 +37,13 @@ public class MerchantInfoNameLogoRating {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    @Override
+    public String toString() {
+        return "MerchantInfoNameLogoRating{" +
+                "name='" + name + '\'' +
+                ", logo='" + logo + '\'' +
+                ", rating=" + rating +
+                '}';
+    }
 }

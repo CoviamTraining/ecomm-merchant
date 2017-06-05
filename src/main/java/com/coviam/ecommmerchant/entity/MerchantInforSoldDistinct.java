@@ -27,5 +27,13 @@ public class MerchantInforSoldDistinct {
     public void setDistinctproduct(int distinctproduct) {
         this.distinctproduct = distinctproduct;
     }
+
+    @Override
+    public String toString() {
+        return "MerchantInforSoldDistinct{" +
+                "productsold=" + productsold +
+                ", distinctproduct=" + distinctproduct +
+                '}';
+    }
 }
 

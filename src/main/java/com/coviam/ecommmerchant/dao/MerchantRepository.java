@@ -10,13 +10,15 @@ import org.springframework.data.repository.query.Param;
 /**
  * Created by gaurav on 03/06/17.
  */
-public interface MerchantRepository extends CrudRepository<Merchant, Long> {
+public interface MerchantRepository extends CrudRepository<Merchant, Integer> {
 
-    @Query("select new com.coviam.ecommmerchant.entity.MerchantInfoNameLogoRating( m.name,m.logo,m.rating ) from Merchant m where m.id = :id ")
-    MerchantInfoNameLogoRating getMerchantNameLogoRating(@Param("id") Long id);
+    @Query("select new com.coviam.ecommmerchant.entity.MerchantInfoNameLogoRating( m.name,m.logo,m.rating ) " +
+            "from Merchant m where m.id = :id ")
+    MerchantInfoNameLogoRating getMerchantNameLogoRating(@Param("id") int id);
 
-    @Query("select new com.coviam.ecommmerchant.entity.MerchantInforSoldDistinct( m.productsold,m.distinctproduct ) from Merchant m where m.id = :id ")
-    MerchantInforSoldDistinct getProductSoldDistinctProduct(@Param("id") Long id);
+    @Query("select new com.coviam.ecommmerchant.entity.MerchantInforSoldDistinct( m.productsold,m.distinctproduct ) " +
+            "from Merchant m where m.id = :id ")
+    MerchantInforSoldDistinct getProductSoldDistinctProduct(@Param("id") int id);
 
 
 }

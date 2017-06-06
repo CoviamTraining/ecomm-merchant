@@ -24,17 +24,17 @@ public class MerchantController {
         return "HHK SDHJSA HKASF ASJHKF ASFSJA";
     }
 
-    @RequestMapping(value = "/getmerchant/{id}")
+    @RequestMapping(value = "/getMerchant/{id}")
     public Merchant getMerchant(@PathVariable Integer id){
         return merchantService.getMerchant(id);
     }
 
-    @RequestMapping(value = "/getmerchantnamelogorating/{id}")
+    @RequestMapping(value = "/getMerchantNameLogoRating/{id}")
     public MerchantInfoNameLogoRating getMerchantNameLogoRating(@PathVariable Long id){
         return merchantService.getMerchantNameLogoRating(Math.toIntExact(id));
     }
 
-    @RequestMapping(value = "/getsoldanddistinctproduct/{id}")
+    @RequestMapping(value = "/getSoldAndDistinctProduct/{id}")
     public MerchantInforSoldDistinct getSoldAndDistinctProduct(@PathVariable Long id){
         return merchantService.getProductSoldDistinctProduct(Math.toIntExact(id));
     }

@@ -1,13 +1,13 @@
 package com.coviam.ecommmerchant.entity;
 
 /**
- * Created by gaurav on 05/06/17.
+ * Created by gaurav on 07/06/17.
  */
-public class MerchantInforSoldDistinct {
+public class MerchantInfoSoldDistinct {
     private long productsold;
     private int distinctproduct;
 
-    public MerchantInforSoldDistinct(long productsold, int distinctproduct) {
+    public MerchantInfoSoldDistinct(long productsold, int distinctproduct) {
         this.productsold = productsold;
         this.distinctproduct = distinctproduct;
     }
@@ -36,4 +36,3 @@ public class MerchantInforSoldDistinct {
                 '}';
     }
 }
-

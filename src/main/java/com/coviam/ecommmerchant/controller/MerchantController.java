@@ -2,7 +2,8 @@ package com.coviam.ecommmerchant.controller;
 
 import com.coviam.ecommmerchant.entity.Merchant;
 import com.coviam.ecommmerchant.entity.MerchantInfoNameLogoRating;
-import com.coviam.ecommmerchant.entity.MerchantInforSoldDistinct;
+import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinct;
+import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinctRating;
 import com.coviam.ecommmerchant.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,8 +35,13 @@ public class MerchantController {
         return merchantService.getMerchantNameLogoRating(Math.toIntExact(id));
     }
 
+    @RequestMapping(value = "/getSoldAndDistinctProductRating/{id}")
+    public MerchantInfoSoldDistinctRating getSoldAndDistinctProductRating(@PathVariable Long id){
+        return merchantService.getProductSoldDistinctProductRating(Math.toIntExact(id));
+    }
+
     @RequestMapping(value = "/getSoldAndDistinctProduct/{id}")
-    public MerchantInforSoldDistinct getSoldAndDistinctProduct(@PathVariable Long id){
+    public MerchantInfoSoldDistinct getSoldAndDistinctProduct(@PathVariable Long id){
         return merchantService.getProductSoldDistinctProduct(Math.toIntExact(id));
     }
 }

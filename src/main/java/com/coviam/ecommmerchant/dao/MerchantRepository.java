@@ -25,5 +25,7 @@ public interface MerchantRepository extends CrudRepository<Merchant, Integer> {
             "from Merchant m where m.id = :id ")
     MerchantInfoSoldDistinct getProductSoldDistinctProduct(@Param("id") int id);
 
+    @Query("select m.name from Merchant m where m.id = :merchantId")
+    String getMerchantNameByMerchantid(@Param("merchantId") int merchantId);
 
 }

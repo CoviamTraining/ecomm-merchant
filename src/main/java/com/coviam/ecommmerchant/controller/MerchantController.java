@@ -44,4 +44,15 @@ public class MerchantController {
     public MerchantInfoSoldDistinct getSoldAndDistinctProduct(@PathVariable Long id){
         return merchantService.getProductSoldDistinctProduct(Math.toIntExact(id));
     }
+
+    @RequestMapping(value = "/getMerchantName/{id}")
+    public String getMerchantName(@PathVariable Long id){
+        return merchantService.getMerchantName(Math.toIntExact(id));
+    }
+
+    @RequestMapping(value = "/updateSoldDistinctOnOrderPlace/{productId}/{merchantId}/{quantity}/{remainStock}")
+    public Merchant updateSoldDistingOnOrderPlace(@PathVariable int productId, @PathVariable int merchantId,
+                                                  @PathVariable int quantity, @PathVariable int remainStock){
+        return merchantService.updateSoldDistinctOnOrderPlace(productId,merchantId,quantity,remainStock);
+    }
 }

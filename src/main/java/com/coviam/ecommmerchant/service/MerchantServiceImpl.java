@@ -9,6 +9,7 @@ import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinctRating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -27,8 +28,13 @@ public class MerchantServiceImpl implements MerchantService {
     private RestTemplate restTemplate = new RestTemplate();
 
     @Override
-    public Merchant getMerchant(Integer id) {
+    public Merchant getMerchant(int id) {
         return merchantRepository.findOne(id);
+    }
+
+    @Override
+    public String getMerchantName(int merchantId) {
+        return merchantRepository.getMerchantNameByMerchantid(merchantId);
     }
 
     @Override
@@ -42,18 +48,16 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Merchant updateSoldDistinctOnOrderPlace(int productId, int merchantId) {
+    @Transactional(readOnly = false)
+    public Merchant updateSoldDistinctOnOrderPlace(int productId, int merchantId, int quantity, int remainStock) {
         Merchant merchant = merchantRepository.findOne(merchantId);
-        merchant.setProductsold(merchant.getDistinctproduct()+1);
+        merchant.setProductsold(merchant.getDistinctproduct()+quantity);
 
-        int stock = restTemplate.getForObject(inventoryUri+"getstock/"+productId+"/"+merchantId, Integer.class);
-        if(stock == 0){
+        if(remainStock  == 0){
             merchant.setDistinctproduct(merchant.getDistinctproduct()-1);
         }
 
-        merchantRepository.save(merchant);
-
-        return null;
+        return merchantRepository.save(merchant);
     }
 
     @Override

@@ -11,7 +11,9 @@ import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinctRating;
  */
 public interface MerchantService {
 
-    public Merchant getMerchant(Integer id);
+    public Merchant getMerchant(int id);
+
+    public String getMerchantName(int merchantId);
 
     public MerchantInfoNameLogoRating getMerchantNameLogoRating(int id);
 
@@ -19,6 +21,6 @@ public interface MerchantService {
 
     public MerchantInfoSoldDistinct getProductSoldDistinctProduct(int id);
 
-    public Merchant updateSoldDistinctOnOrderPlace(int productId, int merchantId);
+    public Merchant updateSoldDistinctOnOrderPlace(int productId, int merchantId,int quantity, int remainStock);
 
 }

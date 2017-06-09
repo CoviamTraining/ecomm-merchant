@@ -2,9 +2,9 @@ package com.coviam.ecommmerchant.service;
 
 
 import com.coviam.ecommmerchant.entity.Merchant;
-import com.coviam.ecommmerchant.entity.MerchantInfoNameLogoRating;
-import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinct;
-import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinctRating;
+import com.coviam.ecommmerchant.dto.MerchantInfoNameLogoRating;
+import com.coviam.ecommmerchant.dto.MerchantInfoSoldDistinct;
+import com.coviam.ecommmerchant.dto.MerchantInfoSoldDistinctRating;
 
 /**
  * Created by gaurav on 05/06/17.

@@ -1,4 +1,4 @@
-package com.coviam.ecommmerchant.entity;
+package com.coviam.ecommmerchant.dto;
 
 /**
  * Created by gaurav on 05/06/17.

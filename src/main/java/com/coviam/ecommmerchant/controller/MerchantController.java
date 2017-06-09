@@ -1,9 +1,9 @@
 package com.coviam.ecommmerchant.controller;
 
 import com.coviam.ecommmerchant.entity.Merchant;
-import com.coviam.ecommmerchant.entity.MerchantInfoNameLogoRating;
-import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinct;
-import com.coviam.ecommmerchant.entity.MerchantInfoSoldDistinctRating;
+import com.coviam.ecommmerchant.dto.MerchantInfoNameLogoRating;
+import com.coviam.ecommmerchant.dto.MerchantInfoSoldDistinct;
+import com.coviam.ecommmerchant.dto.MerchantInfoSoldDistinctRating;
 import com.coviam.ecommmerchant.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -64,5 +64,4 @@ public class MerchantServiceImpl implements MerchantService {
         return merchantRepository.getProductSoldDistinctProduct(id);
     }
 
-
 }
